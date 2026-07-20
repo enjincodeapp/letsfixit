@@ -7,13 +7,16 @@ export const VideoSection: React.FC = () => {
 
   return (
     <section className="relative py-28 md:py-36 bg-charcoal overflow-hidden">
-      {/* Background Parallax Image & Dark Overlay */}
+      {/* Background Parallax Video Card & Dark Overlay */}
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="relative rounded-3xl overflow-hidden glass-card border border-white/10 shadow-luxury h-[480px] sm:h-[580px] group flex items-center justify-center">
-          {/* Background Poster Image */}
-          <img
-            src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=1920&q=85"
-            alt="Let's Fix It Scotland Architectural Construction"
+          {/* Background Hero Video Loop */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            src="/hero.mp4"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
           />
 
@@ -40,15 +43,15 @@ export const VideoSection: React.FC = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsPlayingModalOpen(true)}
-              className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gold/90 hover:bg-gold text-charcoal flex items-center justify-center shadow-gold-glow cursor-pointer transition-all duration-300"
+              className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gold/90 hover:bg-gold text-white flex items-center justify-center shadow-gold-glow cursor-pointer transition-all duration-300"
               aria-label="Play Construction Documentary Film"
             >
               <div className="absolute -inset-2 rounded-full border border-gold/40 animate-ping opacity-50" />
-              <Play className="w-8 h-8 sm:w-10 sm:h-10 fill-charcoal translate-x-0.5" />
+              <Play className="w-8 h-8 sm:w-10 sm:h-10 fill-white translate-x-0.5" />
             </motion.button>
 
             <span className="text-xs text-gold uppercase tracking-widest font-semibold mt-4">
-              Click to Play 4K Film (03:45)
+              Click to Play 4K Fullsite Film
             </span>
           </div>
 
@@ -64,7 +67,7 @@ export const VideoSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Video Modal Player */}
+      {/* Video Modal Player playing /hero.mp4 */}
       <AnimatePresence>
         {isPlayingModalOpen && (
           <motion.div
@@ -83,18 +86,17 @@ export const VideoSection: React.FC = () => {
             >
               <button
                 onClick={() => setIsPlayingModalOpen(false)}
-                className="absolute top-4 right-4 z-20 w-11 h-11 rounded-full bg-charcoal/80 text-white flex items-center justify-center border border-white/20 hover:bg-gold hover:text-charcoal transition-all"
+                className="absolute top-4 right-4 z-20 w-11 h-11 rounded-full bg-charcoal/80 text-white flex items-center justify-center border border-white/20 hover:bg-gold hover:text-white transition-all"
               >
                 <X className="w-6 h-6" />
               </button>
 
               <div className="relative aspect-video w-full bg-black">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-                  title="Let's Fix It Scotland Construction Film"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+                <video
+                  src="/hero.mp4"
+                  controls
+                  autoPlay
+                  className="w-full h-full object-contain"
                 />
               </div>
             </motion.div>
