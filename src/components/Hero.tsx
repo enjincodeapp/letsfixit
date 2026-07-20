@@ -80,7 +80,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
         className="relative z-20 max-w-6xl mx-auto px-6 pt-28 pb-16 flex flex-col items-center text-center"
       >
         {/* Headline */}
-        <motion.h1
+        {/* <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -90,7 +90,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation, onOpenVideo }) =
           <span className="block mt-1">
             Most <span className="font-serif italic text-gold font-normal underline decoration-gold/40 underline-offset-8">Beautiful</span> Homes
           </span>
-        </motion.h1>
+        </motion.h1> */}
 
         {/* Subtitle */}
         <motion.p
